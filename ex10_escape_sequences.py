@@ -19,3 +19,7 @@ print(fat_cat)
 
 escape_sequence = "My\nname is \n\t\\/\"John\"\\/"
 print(escape_sequence)
+
+# If you don’t want characters prefaced by \ to be interpreted as special characters, 
+# you can use raw strings by adding an r before the first quote:
+print(r'C:\some\name')
