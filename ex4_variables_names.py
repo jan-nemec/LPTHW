@@ -20,3 +20,12 @@ print("There will be", cars_driven, "empty cars today.")
 print("We can transport", carpool_capacity, "people today.")
 print("We have", passengers, "to carpool today.")
 print("We need to put about", average_passengers_per_car, "in each car.")
+
+# The first line contains a multiple assignment: the variables a and b
+# simultaneously get the new values 0 and 1. On the last line this is used again
+# Fibonacci series:
+# the sum of two elements defines the next
+a, b = 0, 1
+while b < 10:
+    print(b)
+    a, b = b, a + b
