@@ -48,6 +48,9 @@ for fruit in fruits:
 for i in change:
     print(f"I got {i}")
 
+# Python’s for statement iterates over the items of any sequence (a list or a string),
+# in the order that they appear in the sequence.
+
 # we can also build lists, first start with an empty one
 elements = []
 
@@ -65,3 +68,12 @@ for i in elements:
 
 for i in elements1:
     print(f"Element1 was: {i}")
+
+# If you need to modify the sequence you are iterating over while inside the loop (for example to duplicate selected items), 
+# it is recommended that you first make a copy. 
+# Iterating over a sequence does not implicitly make a copy. 
+# The slice notation makes this especially convenient:
+words = ['cat', 'window', 'defenestrate']
+for w in words[:]:  # Loop over a slice copy of the entire list.
+    if len(w) > 6:
+        words.insert(0, w)

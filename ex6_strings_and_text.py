@@ -30,3 +30,10 @@ e = "a string with a right side."
 print(w + e)
 
 # change "What You Should See" snapshot to reflect changes
+
+# The string is enclosed in double quotes if the string contains a single quote and no double quotes,
+# otherwise it is enclosed in single quotes. 
+# The print() function produces a more readable output, 
+# by omitting the enclosing quotes and by printing escaped and special characters:
+'"Isn\'t," she said.'
+print('"Isn\'t," she said.')

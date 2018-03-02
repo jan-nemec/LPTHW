@@ -1,4 +1,5 @@
 # Else and If
+# An if … elif … elif … sequence is a substitute for the switch or case statements found in other languages.
 
 people = 30
 cars = 40
