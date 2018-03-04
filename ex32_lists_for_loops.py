@@ -55,7 +55,10 @@ for i in change:
 elements = []
 
 # then use the range function to do 0 to 5 counts
-for i in range(0, 6):
+# It is possible to let the range start at another number,
+# or to specify a different increment (even negative; sometimes this is called the ‘step’):
+for i in range(6):  # for i in range(len(a)):
+    # for i in range(0, 6):
     print(f"Adding {i} to the list.")
     elements.append(i)
 
@@ -69,11 +72,51 @@ for i in elements:
 for i in elements1:
     print(f"Element1 was: {i}")
 
-# If you need to modify the sequence you are iterating over while inside the loop (for example to duplicate selected items), 
-# it is recommended that you first make a copy. 
-# Iterating over a sequence does not implicitly make a copy. 
+# If you need to modify the sequence you are iterating over while inside the loop (for example to duplicate selected items),
+# it is recommended that you first make a copy.
+# Iterating over a sequence does not implicitly make a copy.
 # The slice notation makes this especially convenient:
 words = ['cat', 'window', 'defenestrate']
 for w in words[:]:  # Loop over a slice copy of the entire list.
     if len(w) > 6:
         words.insert(0, w)
+
+# The function list() creates lists from iterables:
+# list(range(5))
+# output: [0, 1, 2, 3, 4]
+
+# break and continue Statements:
+for n in range(2, 10):
+    for x in range(2, n):
+        if n % x == 0:
+            print(n, 'equals', x, '*', n // x)
+            # else clause is not executed when the loop is terminated by a break statement.
+            break
+        else:
+            # loop fell through without finding a factor
+            print(n, 'is a prime number')
+
+# The continue statement continues with the next iteration of the loop:
+for num in range(2, 10):
+    if num % 2 == 0:
+        print("Found an even number", num)
+        continue
+    print("Found a number", num)
+
+# pass Statements:
+# The pass statement does nothing. It can be used when a statement is required syntactically but the program requires no action.
+# For example:
+while True:
+    pass  # Busy-wait for keyboard interrupt (Ctrl+C)
+
+# This is commonly used for creating minimal classes:
+
+# Another place pass can be used is as a place-holder for a function or conditional body when you are working on new code, allowing you to keep thinking at a more abstract level.
+
+
+class MyEmptyClass:
+    pass
+
+
+def initlog(*args):
+    pass   # Remember to implement this!
