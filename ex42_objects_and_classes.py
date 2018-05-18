@@ -35,9 +35,24 @@
 # as in "a salmon has-a mouth."
 
 
+
+
+
+# The instantiation operation (“calling” a class object) creates an empty object. 
+# Many classes like to create objects with instances customized to a specific initial state. 
+# Therefore a class may define a special method named __init__(), like this:
+# def __init__(self):
+#   self.data = []
+
+# Of course, the __init__() method may have arguments for greater flexibility. 
+# In that case, arguments given to the class instantiation operator are passed on to __init__(). 
+# class Complex:
+#    def __init__(self, realpart, imagpart):
+#        self.r = realpart
+#        self.i = imagpart
+
 ## Animal is-a object
 class Animal(object):
-
     def __init__(self, sound):
         self.sound = sound
 

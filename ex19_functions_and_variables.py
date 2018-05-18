@@ -11,6 +11,8 @@
 # But sometimes necessity means you have to use the same name,
 # or you might do it on accident. Just avoid it whenever you can.
 
+# Use CamelCase for classes and lower_case_with_underscores for functions and methods. 
+
 def cheese_and_crackers(cheese_count, boxes_of_crackers):
 	print(f"You have {cheese_count} cheeses!")
 	print(f"You have {boxes_of_crackers} boxes of crackers!")

@@ -2,9 +2,12 @@
 
 # A Dictionary (or "dict") is a way to store data just like a list,
 # but instead of using only numbers to get the data, you can use almost anything.
+# It is best to think of a dictionary as an unordered set of key: value pairs, 
+# with the requirement that the keys are unique (within one dictionary.
 
 # A dictionary is used to map or associate things you want to store to keys you need to get them.
 # A dictionary (or dict) is for matching some items (called "keys") to other items (called "values").
+# Unlike sequences, which are indexed by a range of numbers, dictionaries are indexed by keys, which can be any immutable type.
 
 # What would I use a dictionary for?
 # When you have to take one value and "look up" another value. In fact, you could call dictionaries "look up tables."
@@ -24,6 +27,10 @@
 # 5. Once you found the entry, you'd read the definition to figure out what it means.
 # This process is nearly exactly the way a dict works, and you are basically "mapping" the word "honorificabilitudinitatibus" to its definition.
 
+# Performing list(d.keys()) on a dictionary returns a list of all the keys used in the dictionary, 
+# in arbitrary order (if you want it sorted, just use sorted(d.keys()) instead). 
+# To check whether a single key is in the dictionary, use the in keyword.
+
 # Lists
 # You can only use numbers to get items out of a list.
 
@@ -41,12 +48,24 @@ print(things)
 # Dicts
 # a dict associates one thing to another, no matter what it is.
 stuff = {'name': 'Jan', 'age': 38, 'height': 6 * 30 + 1.7}
+stuff1 = dict([('name','Jan'),('age', 38)])
+# When the keys are simple strings, it is sometimes easier to specify pairs using keyword arguments:
+stuff2 = dict(name='Jan', age=38)
+
 print(stuff['name'])
 
 print(stuff['height'])
 
 stuff['city'] = "SF"
 print(stuff['city'])
+
+list(stuff.keys())
+sorted(stuff.keys())
+del stuff['city']
+'city' in stuff
+
+# dict comprehensions can be used to create dictionaries from arbitrary key and value expressions:
+{x: x**2 for x in (2, 4, 6)}
 
 # You will see that instead of just numbers
 # we're using strings to say what we want from the stuff dictionary.
@@ -105,10 +124,63 @@ print('-' * 10)
 print("Michigan has:", cities[states['Michigan']])
 print("Florida has:", cities[states['Florida']])
 
+# Looping Techniques
+
+# When looping through dictionaries, the key and corresponding value 
+# can be retrieved at the same time using the items() method.
+
 # print every state abbreviation
 print("-" * 10)
 for state, abbrev in list(states.items()):
     print(f"{state} is abbreviated {abbrev}")
+
+# When looping through a sequence, the position index and corresponding value 
+# can be retrieved at the same time using the enumerate() function.
+for i, v in enumerate(['tic', 'tac', 'toe']):
+    print(i, v)
+
+# To loop over two or more sequences at the same time, 
+# the entries can be paired with the zip() function.
+questions = ['name', 'quest', 'favorite color']
+answers = ['lancelot', 'the holy grail', 'blue']
+for q, a in zip(questions, answers):
+    print('What is your {0}?  It is {1}.'.format(q, a))
+
+# To loop over a sequence in sorted order, 
+# use the sorted() function which returns a new sorted list 
+# while leaving the source unaltered.
+sample = [0, 8, 55, 2, -1]
+for num in sorted(sample):
+    print(num)
+
+# To loop over a sequence in reverse, 
+# first specify the sequence in a forward direction 
+# and then call the reversed() function.
+for i in reversed(range(1, 10, 2)):
+    print(i)
+
+# It is sometimes tempting to change a list while you are looping over it; 
+# however, it is often simpler and safer to create a new list instead.
+import math
+raw_data = [56.2, float('NaN'), 51.7, 55.3, 52.5, float('NaN'), 47.8]
+filtered_data = []
+for value in raw_data:
+    if not math.isnan(value):
+        filtered_data.append(value)
+
+filtered_data
+
+# Conditions
+# in and  not in - check whether a value occurs (does not occur) in a sequence. 
+# is and is not compare whether two objects are really the same object; this only matters for mutable objects like lists.
+# Comparisons can be chained. For example, a < b == c
+# Comparisons may be combined using the Boolean operators and and or, 
+# and the outcome of a comparison (or of any other Boolean expression) may be negated with not.
+# It is possible to assign the result of a comparison or other Boolean expression to a variable. For example,
+string1, string2, string3 = '', 'Trondheim', 'Hammer Dance'
+non_null = string1 or string2 or string3
+non_null
+# 'Trondheim'
 
 # print every city in state
 print('-' * 10)

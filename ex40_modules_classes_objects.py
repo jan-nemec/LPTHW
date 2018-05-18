@@ -1,4 +1,12 @@
 # Modules Are Like Dictionaries
+# If you quit from the Python interpreter and enter it again, 
+# the definitions you have made (functions and variables) are lost. 
+# Therefore, if you want to write a somewhat longer program, 
+# you are better off using a text editor to prepare the input for the interpreter 
+# and running it with that file as input instead. 
+# This is known as creating a script. 
+# As your program gets longer, you may want to split it into several files for easier maintenance. 
+# You may also want to use a handy function that you’ve written in several programs without copying its definition into each program.
 
 mystuff = {"apple": "I AM APPLES!"}
 print(mystuff)
@@ -8,10 +16,24 @@ print(mystuff)
 # 2. You import that file.
 # 3. And you can access the functions or variables in that module with the . (dot) operator.
 
+# Modules can import other modules. 
+# It is customary but not required to place all import statements at the beginning of a module. 
+# The imported module names are placed in the importing module’s global symbol table.
+
 import ex40_mystuff as my_stuff
+
+# There is a variant of the import statement that imports names from a module directly into the importing module’s symbol table
+from ex40_mystuff import apple # from fibo import fib as fibonacci
 
 my_stuff.apple()
 print(my_stuff.tangerine)
+
+# Within a module, the module’s name (as a string) is available as the value of the global variable __name__. 
+my_stuff.__name__
+
+# If you intend to use a function often you can assign it to a local name:
+apple = my_stuff.apple
+apple()
 
 # Refer back to the dictionary,
 # and you should start to see how this is similar to using a dictionary,
@@ -59,3 +81,8 @@ class MyStuff(object):
 thing = MyStuff()
 thing.apple()
 print(thing.tangerine)
+
+# Note For efficiency reasons, each module is only imported once per interpreter session. 
+# Therefore, if you change your modules, you must restart the interpreter – 
+# or, if it’s just one module you want to test interactively, 
+# use importlib.reload(), e.g. import importlib; importlib.reload(modulename).

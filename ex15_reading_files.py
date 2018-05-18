@@ -12,11 +12,14 @@ from sys import argv
 script, filename = argv
 
 txt = open(filename)
+# open() returns a file object, and is most commonly used with two arguments: 
+# open(filename, mode).
 
 print(f"Here's your file {filename}")
 print(txt.read()) # We are calling commands, but commands are also called functions or methods.
 # "Hey txt! Do your read command with no parameters!"
 # It's important to close files when you are done with them.
+
 txt.close()
 
 print("Type the filename again: ", end=" ")

@@ -175,12 +175,28 @@ print("[] is []", [] is [])
 # lambda is used to create an anonymous function (function with no name).
 # It is an inline function that does not contain a return statement.
 # It consists of an expression that is evaluated and returned.
+# Lambda functions can be used wherever function objects are required. 
+# They are syntactically restricted to a single expression. 
+# Semantically, they are just syntactic sugar for a normal function definition.
 a = lambda x: x*2
 for i in range(1, 6):
     print(a(i))
 
 s = lambda y: y**y
 print(s(3))
+
+def make_incrementator(n):
+    return lambda x: x + n
+
+f = make_incrementator(42)
+f(0)
+f(1)
+
+# The above example uses a lambda expression to return a function. 
+# Another use is to pass a small function as an argument:
+pairs = [(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four')]
+pairs.sort(key=lambda pair: pair[1])
+pairs
 
 # pass
 # Suppose we have a function that is not implemented yet, but we want to implement it in the future.
@@ -227,3 +243,35 @@ for i in g:
     print(i)
 # Here, the function generator() returns a generator that generates square of numbers from 0 to 5.
 # This is printed in the for loop.
+
+# Generators are a simple and powerful tool for creating iterators. 
+# They are written like regular functions but use the yield statement 
+# whenever they want to return data. Each time next() is called on it, 
+# the generator resumes where it left off (it remembers all the data values 
+# and which statement was last executed). 
+def reverse(data):
+    for index in range(len(data)-1, -1, -1):
+        yield data[index]
+
+for char in reverse('golf'):
+    print(char)
+
+# What makes generators so compact is that 
+# the __iter__() and __next__() methods are created automatically.
+# Another key feature is that the local variables and execution state are automatically saved between calls. 
+# When generators terminate, they automatically raise StopIteration. 
+# In combination, these features make it easy to create iterators with no more effort than writing a regular function.
+
+# Generator Expressions
+
+# Some simple generators can be coded succinctly as expressions using a 
+# syntax similar to list comprehensions but with parentheses instead of square brackets.
+# Generator expressions are more compact but less versatile than full generator definitions 
+# and tend to be more memory friendly than equivalent list comprehensions.
+# Examples:
+sum(i*i for i in range(4))
+# 14
+
+data = 'golf'
+list(data[i] for i in range(len(data)-1, -1, -1))
+# ['f', 'l', 'o', 'g']

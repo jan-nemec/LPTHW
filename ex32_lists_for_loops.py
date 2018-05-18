@@ -15,6 +15,13 @@ cubes = [1, 8, 27, 65, 125]
 cubes[3] = 64
 
 # You can also add new items at the end of the list, by using the append() method
+# The statement cubes.append(a) calls a method of the list object result.
+# A method is a function that ‘belongs’ to an object and is named obj.methodname, where obj is some object (this may be an expression),
+# and methodname is the name of a method that is defined by the object’s type.
+# Different types define different methods.
+# Methods of different types may have the same name without causing ambiguity. (It is possible to define your own object types and methods, using classes)
+# The method append() shown in the example is defined for list objects; it adds a new element at the end of the list.
+# In this example it is equivalent to cubes = cubes + [216], but more efficient.
 cubes.append(216)
 cubes.append(7 ** 3)
 

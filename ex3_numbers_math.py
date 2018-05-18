@@ -26,7 +26,7 @@ print("Is it greater or equal?", -2 <= 5)
 print("Is it less or equal?", -2 >= 5)
 
 # In interactive mode, the last printed expression is assigned to the variable _.
-# This means that when you are using Python as a desk calculator, 
+# This means that when you are using Python as a desk calculator,
 # it is somewhat easier to continue calculations, for example:
 tax = 12.5 / 100
 price = 100.50
