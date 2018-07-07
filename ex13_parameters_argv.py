@@ -1,19 +1,17 @@
 # Exercise 13: Parameters, Unpacking, Variables
 # Run shell commands
 
-# add feature (the real name is MODULEs or libraries) to your script from the Python feature set
+# Add feature (the real name is MODULEs or libraries) to your script from the Python feature set
 # We are importing the sys module
 # Modules gives you features
+
+# Called an ”import.” This is how you add features to your script from the Python
+# feature set. Rather than give you all the features at once, Python asks you to say what you plan to use.
+# This keeps your programs small, but it also acts as documentation for other programmers who read your
+# code later.
 from sys import argv  # argv holds the arguments you pass to your Python script
-# read the WYSS section for how to run this
+
 script, first, second, third = argv  # Take whatever is in argv, unpack it, and assign it to all of these variables on the left in order.
-
-name = input('What\'s your name? ')
-print("Hello,", name)
-
-print("How old are you?", end=" ")
-age = input()
-print("You are", age, "old.")
 
 print("The script is called:", script)
 print(f"Your first variable is: {first}")

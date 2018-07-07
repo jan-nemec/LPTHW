@@ -18,7 +18,9 @@ print(f"I said: {x}")
 # left out f in front of string and omit extra period
 print(f"I also said: '{y}'")
 
-# formatting using the .format() syntax when I want to apply a format to an already created string
+# formatting using the .format() syntax 
+# You'll see me use that sometimes when I want to apply a format 
+# to an already created string, such as in a loop.
 hilarious = False
 joke_evaluation = "Isn't that joke so funny?! {}"
 
@@ -31,8 +33,8 @@ print(w + e)
 
 # change "What You Should See" snapshot to reflect changes
 
-# The string is enclosed in double quotes if the string contains a single quote and no double quotes,
-# otherwise it is enclosed in single quotes. 
+# The string is enclosed in double quotes if the string contains a single quote 
+# and no double quotes, otherwise it is enclosed in single quotes. 
 # The print() function produces a more readable output, 
 # by omitting the enclosing quotes and by printing escaped and special characters:
 '"Isn\'t," she said.'

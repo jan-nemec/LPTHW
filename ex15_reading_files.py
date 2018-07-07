@@ -25,7 +25,7 @@ txt.close()
 print("Type the filename again: ", end=" ")
 file_again = input("> ")
 
-txt_again = open()
+txt_again = open(file_again)
 
 print(txt_again.read())
 
