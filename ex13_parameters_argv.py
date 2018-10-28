@@ -1,5 +1,7 @@
 # Exercise 13: Parameters, Unpacking, Variables
 # Run shell commands
+# You know how you type python ex13.py to run the ex13.py file?
+# Well the ex13.py part of the command is called an ”argument.” 
 
 # Add feature (the real name is MODULEs or libraries) to your script from the Python feature set
 # We are importing the sys module
@@ -11,7 +13,11 @@
 # code later.
 from sys import argv  # argv holds the arguments you pass to your Python script
 
-script, first, second, third = argv  # Take whatever is in argv, unpack it, and assign it to all of these variables on the left in order.
+script, first, second, third = argv  
+# ”unpacks” argv so that, rather than holding all the arguments, 
+# it gets assigned to four variables you can work with: script, first, second, and third. 
+# Take whatever is in argv, unpack it, and assign it to all of these variables on the left in order.
+# The command line arguments are strings - Use int() to convert them just like with int(input())
 
 print("The script is called:", script)
 print(f"Your first variable is: {first}")
@@ -20,3 +26,11 @@ print("Your second variable is:", second)
 print("Your third variable is: {}".format(third))
 
 # python ex13_parameters_argv.py first 2nd 3rd
+
+
+age = input("How old are you? ")
+print(f'You are {age} old.')
+# What’s the difference between argv and input()? The difference has to do with where the user is re-
+# quired to give input. If they give your script inputs on the command line, then you use argv. If
+# you want them to input using the keyboard while the script is running, then use input().
+print(f'In ten years you will be {int(age) + 10} old.')

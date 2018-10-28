@@ -8,7 +8,7 @@
 # Using 1 and 2 they let you make your own "mini-scripts" or "tiny commands."
 
 # Function checklist
-# 1. Did you start your function definition with def? Def intoduces the function definition.
+# 1. Did you start your function definition with def? Def introduces the function definition.
 # Optional: """function's documentation or docstring - it's good practice to include docstrings"""
 # 2. def is followed by the function name. Does your function name have only characters and _ (underscore) characters?
 # 3. Did you put an open parenthesis ( right after the function name?
@@ -28,11 +28,12 @@
 # That tells Python to take all the arguments to the function and then put them in args as a list. It's like argv that you've been using, but for functions. It's not normally used too often unless specifically needed.
 
 
-def print_two(*args):
+def print_two(*args):  # put args as a list
     arg1, arg2 = args
     print(f"arg1: {arg1}, arg2: {arg2}")
 
 # ok, that *args is actually pointless, we can just do this
+
 
 # Documentation Strings
 def print_two_again(arg1, arg2):
@@ -44,7 +45,7 @@ def print_two_again(arg1, arg2):
 
     print(f"arg1: {arg1}, arg2: {arg2}")
 
-print(print_two_again.__doc__) # Get the Documentation Strings
+print(print_two_again.__doc__)  # Get the Documentation Strings
 
 # Function Annotations
 # Function annotations are completely optional metadata information about the types used by user-defined functions 
@@ -54,11 +55,13 @@ print(print_two_again.__doc__) # Get the Documentation Strings
 def print_one(arg1):
     print(f"arg1: {arg1}")
 
+
 # this one takes no arguments
 def f(ham: str, eggs: str = 'eggs') -> str:
     print("Annotations:", f.__annotations__)
     print("Arguments:", ham, eggs)
     return ham + ' and ' + eggs
+# Annotations: {'ham': <class 'str'>, 'eggs': <class 'str'>, 'return': <class 'str'>}
 
 def print_none():
     print("I got nothing'.")

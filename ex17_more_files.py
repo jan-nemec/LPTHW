@@ -30,3 +30,12 @@ print("Alright, all done.")
 
 out_file.close()
 # in_file.close()
+
+# Study Drills
+# See how short you can make the script. I could make this one line long.
+in_file = open(to_file, 'w').write(open(from_file).read())
+in_file.close()
+# When I try to make this script shorter I get an error when I close the files at the end. 
+# You probably did something like this, indata = open(from_file).read(), which means you don’t need to then
+# do in_file.close() when you reach the end of the script. It should already be closed by Python
+# once that one line runs.

@@ -14,8 +14,9 @@ print(f"Do you like me {user_name}?")
 # we just change it in this one spot and rerun the script. Very handy.
 likes = input(prompt)
 
-print(f"Where do you live {user_name}?")
-lives = input(prompt)
+# print(f"Where do you live {user_name}?")
+# lives = input(prompt)
+lives = input(f'Where do you live {user_name}? ')
 
 print("What kind of computer do you have?")
 computer = input(prompt)
