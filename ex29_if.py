@@ -1,10 +1,16 @@
 # What If
+# the if statement is how you perform this sort of decision-making. 
+# It allows for conditional execution of a statement or group of statements
+# based on the value of an expression.
 
 people = 20
 cats = 30
 dogs = 15
 
 if people < cats:
+# What do you think the if does to the code under it? An if-statement creates 
+# what is called a ”branch” in the code. 
+
 # Why does the code under the if need to be indented four spaces?
 # A colon at the end of a line is how you tell Python you are going to create a new "block" of code,
 # and then indenting four spaces tells Python what lines of code are in that block.

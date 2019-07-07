@@ -7,7 +7,7 @@ from textwrap import dedent
 # This little function will help us write our room descriptions using """ (triple-quote) strings.
 # It simply strips leading white-space from the beginning of lines in a string.
 # Without this function using """ style strings fails because they are indented on the screen the same level as in the Python code
-P
+
 
 class Scene(object):
 

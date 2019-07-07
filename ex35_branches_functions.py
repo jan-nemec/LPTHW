@@ -67,7 +67,6 @@ def start():
     print("There is a door to your right and left.")
     print("Which one do you take?")
 
-    #while(True):
     choice = input("> ")
 
     if choice == "left":
@@ -75,7 +74,6 @@ def start():
     elif choice == "right":
         cthulhu_room()
     else:
-        print("You stamble around the room until you starve.")
-        #start()
+        dead("You stamble around the room until you starve.")
 
 start()

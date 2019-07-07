@@ -11,3 +11,9 @@ print("I could have code like this.")  # and the comment after ignored
 
 print("This will run.")
 print("Hi # there.")
+
+'''
+Multiple line comment
+text 1
+text 2
+'''

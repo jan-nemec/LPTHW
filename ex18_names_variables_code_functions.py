@@ -56,12 +56,20 @@ def print_one(arg1):
     print(f"arg1: {arg1}")
 
 
-# this one takes no arguments
+# this one has an default parameter eggs
 def f(ham: str, eggs: str = 'eggs') -> str:
     print("Annotations:", f.__annotations__)
     print("Arguments:", ham, eggs)
     return ham + ' and ' + eggs
 # Annotations: {'ham': <class 'str'>, 'eggs': <class 'str'>, 'return': <class 'str'>}
+
+# default parameter
+def simple(num1, num2 = 5):
+    print(num1, num2)
+
+simple(5)
+simple(5, 555)
+
 
 def print_none():
     print("I got nothing'.")

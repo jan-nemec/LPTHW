@@ -74,7 +74,7 @@ else:
 
         age = int(input("> "))
 
-        if 0 <= age < 10:
+        if 0 <= age < 10: #age in range(0, 10)
             print("You are kid.")
         elif age < 20:
             print("You are teenager.")

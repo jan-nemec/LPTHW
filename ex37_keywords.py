@@ -13,8 +13,7 @@ if True or False:
 
 # as
 # Now we can refer to the math module with this name.
-# from
-# Importing specific parts of a module.
+# from - Importing specific parts of a module.
 from sys import exit as cau
 choice = input("Zadej Ahoj a ukončíš program. >>> ")
 if choice == "Ahoj":
@@ -23,7 +22,8 @@ if choice == "Ahoj":
 
 # assert
 # Is used for debugging purposes
-# If the condition is true, nothing happens. But if the condition is false, AssertionError is raised.
+# If the condition is true, nothing happens. But if the condition is false, 
+# AssertionError is raised.
 a = 4
 assert a < 5, "The value is OK"
 #assert a > 5, "The value of a is too small"
@@ -110,9 +110,10 @@ def reciprocal(num):
     return r
 
     # finally is used with try…except block to close up resources or file streams.
-    # Using finally ensures that the block of code inside it gets executed even if there is an unhandled exception
-    #finally:
-        #print("Finally, this is the end of the reciprocal function.")
+    # Using finally ensures that the block of code inside it gets executed 
+    # even if there is an unhandled exception
+    # finally:
+        # print("Finally, this is the end of the reciprocal function.")
 
 print(reciprocal(10))
 print(reciprocal(0))
@@ -139,6 +140,25 @@ print("Cosinus of 1 is", cos(1))
 # global is used to declare that a variable inside the function is global (outside the function)
 # If we need to modify the value of a global variable inside a function, then we must declare it with global.
 # Otherwise a local variable with that name is created.
+
+x = 6 # local variable
+
+def example():
+    global x
+    z = 5
+    print(z)
+    print(x)
+    # x += 100 # UnboundLocalError: local variable 'x' referenced before assignment
+    x += 100
+    print(x) 
+
+    globx = x
+    print(globx)
+    globx += 5
+    print(globx)
+    return globx
+
+
 globvar = 10
 def read1():
     print(globvar)
@@ -162,7 +182,9 @@ for n in c:
     print(n)
 
 # is
-# is is used in Python for testing object identity. While the == operator is used to test if two variables are equal or not, is is used to test if the two variables refer to the same object
+# is is used in Python for testing object identity. While the == operator is 
+# used to test if two variables are equal or not, 
+# is is used to test if the two variables refer to the same object
 # Like == to test equality.
 # It returns True if the objects are identical and False if not.
 print("[] == []", [] == [])

@@ -17,6 +17,7 @@ txt = open(filename)
 # thing called a ”file object.”
 # open() returns a file object, and is most commonly used with two arguments: 
 # open(filename, mode).
+# The file object is not the file’s contents
 
 print(f"Here's your file {filename}")
 print(txt.read()) # We are calling commands, but commands are also called functions or methods.

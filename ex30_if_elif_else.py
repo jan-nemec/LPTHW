@@ -1,5 +1,6 @@
 # Else and If
-# An if … elif … elif … sequence is a substitute for the switch or case statements found in other languages.
+# An if … elif … elif … sequence is a substitute for the switch or 
+# case statements found in other languages.
 
 people = 30
 cars = 40
@@ -12,7 +13,8 @@ elif cars < people:
 elif trucks < people:
     print("Will be this printed?")
 # What happens if multiple elif blocks are True?
-# Python starts and the top runs the first block that is True, so it will run only the first one.
+# Python starts and the top runs the first block that is True, 
+# so it will run only the first one.
 else:
     print("We can't decide.")
 

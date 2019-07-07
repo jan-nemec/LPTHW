@@ -1,6 +1,10 @@
 # Loops and Lists
 
-# Lists are exactly what their name says: a container of things that are organized in order from first to last.
+# Before you can use a for-loop, you need a way to store the results of loops 
+# somewhere. The best way to do this is with lists. 
+
+# Lists are exactly what their name says: a container of things 
+# that are organized in order from first to last.
 
 the_count = [1, 2, 3, 4, 5]
 fruits = ['apple', 'oranges', 'pears', 'apricots']
