@@ -45,3 +45,6 @@ def print_first_and_last_sorted(sentence):
     words = sort_sentence(sentence)
     print_first_word(words)
     print_last_word(words)
+
+# Try doing this: help(ex25) and also help(ex25.break_words).
+# """ strings are called documentation comments

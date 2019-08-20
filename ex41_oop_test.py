@@ -2,11 +2,27 @@
 # python oop_test.py english
 
 import random
-from urllib.request import urlopen
+# from urllib.request import urlopen
 import sys
 
 WORD_URL = "http://learncodethehardway.org/words.txt"
-WORDS = []
+# WORDS = []
+
+WORDS = ['account', 'achiever', 'actor', 'addition', 'adjustment',
+'advertisement', 'advice', 'aftermath', 'agreement', 'airplane', 'airport',
+'alarm', 'amount', 'amusement', 'angle', 'animal', 'answer', 'ant',
+'apparatus', 'apparel', 'apple', 'appliance', 'approval', 'arch', 'argument',
+'arithmetic', 'arm', 'army', 'art', 'attack', 'attempt', 'attention',
+'attraction', 'aunt', 'authority', 'baby', 'back', 'badge', 'bag', 'bait',
+'balance', 'ball', 'balloon', 'banana', 'band', 'base', 'baseball', 'basket',
+'basketball', 'bat', 'bath', 'battle', 'bead', 'beam', 'bean', 'bear', 'beast',
+'bed','bedroom', 'bee', 'beef', 'beetle', 'beggar', 'beginner', 'behavior',
+'belief', 'believe', 'bell', 'berry', 'bike', 'bird', 'birth', 'birthday',
+'bit', 'bite', 'blade', 'blood', 'blow', 'board', 'boat', 'body', 'bomb',
+'bone', 'book', 'boot', 'border', 'bottle', 'boundary', 'box', 'boy', 'brain',
+'brake', 'branch', 'brass', 'bread', 'breakfast', 'breath', 'brick', 'bridge',
+'brother', 'brush', 'bubble', 'bucket', 'building', 'bulb', 'bun', 'burn',
+'burst', 'business', 'butto']
 
 PHRASES = {
     "class %%%(%%%):":
@@ -31,15 +47,15 @@ else:
     PHRASE_FIRST = False
 
 # load up the words from the website
-for word in urlopen(WORD_URL).readlines():
-    WORDS.append(str(word.strip(), encoding="utf-8"))
+# for word in urlopen(WORD_URL).readlines():
+#    WORDS.append(str(word.strip(), encoding="utf-8"))
 
 
 def convert(snippet, phrase):
     class_names = [w.capitalize() for w in random.sample(WORDS, snippet.count("%%%"))]  # g = (2**x for x in range(100))
     other_names = random.sample(WORDS, snippet.count("***"))
-    #print("Class names:", class_names)
-    #print("Other names:", other_names)
+    # print("Class names:", class_names)
+    # print("Other names:", other_names)
     results = []
     param_names = []
 
@@ -68,10 +84,10 @@ def convert(snippet, phrase):
     return results
 
 
-#a, b, c = [1, 5, 10]
-#print(a, b, c)
-#a, b, c = c, b, a
-#print(a, b, c)
+# a, b, c = [1, 5, 10]
+# print(a, b, c)
+# a, b, c = c, b, a
+# print(a, b, c)
 
 # keep going until they hit CTRL-D
 try:

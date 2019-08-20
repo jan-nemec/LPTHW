@@ -32,3 +32,7 @@ a, b = 0, 1
 while b < 10:
     print(b)
     a, b = b, a + b
+
+# unpacking
+x, y, z = (3, 5, 8)
+print(f'x = {x}, y = {y}, z = {z}')
