@@ -163,7 +163,18 @@ john.name = 'John Doe'
 john.dept = 'computer lab'
 john.salary = 1000
 
-
+# Class Style
+#   * Your class shoud use "camel case" like SuperGoldFactory
+#   * Try not to do much in your __init__ functions. It makes them harder to use.
+#   * Your other functions shoud use "underscore format", so write 
+#     my_awesome_hair and not myawesomehair or MyAwesomeHair
+#   * Be consistent in how you organize your function arguments. If your
+#     class has to deal with users, dogs, and cats, keep that order throughout
+#     unless it really doesn't make sense. If you have one function that takes
+#     (dog, cat, user) and other takes (user, cat, dog), it'll be hard to use.
+#   * Try not to use variables that come from the module or globals. They
+#     should be fairly self-contained.
+#   * Always have class Name(object) format
 
 
 skakal_pes = Song(["Skákal pes,", "přes oves,", "přes zelenou louku."])

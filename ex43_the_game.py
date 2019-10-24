@@ -52,6 +52,7 @@ class Death(Scene):
 
     def enter(self):
         print(Death.quips[randint(0, len(self.quips)-1)])
+        # why not print(self.quips[randint(0, len(self.quips)-1)]) ?
         exit(1)
 
 
@@ -138,7 +139,7 @@ class LaserWeaponArmory(Scene):
             """))
 
         code = f"{randint(1,9)}{randint(1,9)}{randint(1,9)}"
-        print(code)
+        print(code)  # only for debugging
         guesses = 1
         guess = input(f"[{guesses}. keypad]> ")
 
@@ -176,6 +177,7 @@ class TheBridge(Scene):
               clown costume than the last.  They haven't pulled their
               weapons out yet, as they see the active bomb under your
               arm and don't want to set it off.
+              Options: throw the bomb | slowly place the bomb
               """))
 
         action = input("> ")
@@ -222,7 +224,7 @@ class EscapePod(Scene):
               There's 5 pods, which one do you take?
               """))
 
-        good_pod = randint(1,5)
+        good_pod = randint(1, 5)
         guess = input("[pod #]> ")
 
         if int(guess) != good_pod:
