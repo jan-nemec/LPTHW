@@ -1,6 +1,6 @@
 // Place your settings in this file to overwrite default and user settings.
 {
     "python.pythonPath": "${workspaceFolder}\\venv\\Scripts\\python.exe",
-    "python.linting.pep8Enabled": true,
+    "python.linting.pycodestyleEnabled": true,
     //"editor.formatOnSave": true
 }
