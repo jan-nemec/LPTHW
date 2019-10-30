@@ -13,6 +13,15 @@
 
 # Use CamelCase for classes and lower_case_with_underscores for functions and methods. 
 
+# Function Style
+# * For various reasons, programmers call functions that are part of
+#	classes "methods"
+# * Instead of naming your functions after what the function does, instead
+#	name it as if it's a command. Same as pop is saying "Hey list, pop this
+# 	off." It isn!t called remove_from_end_of_list because even though that's
+#	what it does, that's not command to a list.
+# * Keep your functions small and simple.
+
 def cheese_and_crackers(cheese_count, boxes_of_crackers):
 	print(f"You have {cheese_count} cheeses!")
 	print(f"You have {boxes_of_crackers} boxes of crackers!")
