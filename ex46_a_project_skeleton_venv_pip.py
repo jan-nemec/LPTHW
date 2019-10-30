@@ -101,3 +101,27 @@
 # Users can then install all the necessary packages with install -r:
 
 # pip install -r requirements.txt
+
+
+# Creating the Skeleton Project Directory
+
+# mkdir projects
+# cd projects/
+# mkdir skeleton
+# cd skeleton
+# mkdir bin NAME tests docs
+
+# bin directory - Why do we need a bin/ folder? This is just a standard place
+# to put scripts that are run on the command line, not a place to put modules.
+
+# https://docs.python.org/3/distutils/setupscript.html
+
+# Using the Skeleton
+# Whenever you want to start a new project, just do this:
+# 1. Make a copy of your skeleton directory and name it after new project.
+# 2. Rename the NAME directory to be the name of your project or whatever
+# you want to call your root module.
+# 3. Edit your setup.py to have all the information for your project.
+# 4. Rename tests/NAME_tests.py to also have your module name.
+# 5. Check it's all working by using nosetests.
+# 6. Start coding.
