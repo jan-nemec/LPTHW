@@ -1,8 +1,12 @@
-<html>
+{% extends "layout.html" %}
+
+<!-- <html>
     <head>
         <title>Gothons Of Planet Percal #25</title>
     </head>
-<body>
+<body> -->
+
+{% block content %}
 
 {% if greeting %}
     I just want to say
@@ -11,5 +15,7 @@
     <em>Hello</em>, world!
 {% endif %}
 
-</body>
-</html>
+{% endblock %}
+
+<!-- </body>
+</html> -->
