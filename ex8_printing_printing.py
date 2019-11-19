@@ -65,6 +65,7 @@ print('The value of PI is approximately %5.3f.' % math.pi)
 
 # End of lines are automatically included in the string, 
 # but it’s possible to prevent this by adding a \ at the end of the line.
+# Then the initial newling is not included.
 print("""\
 Usage: thingy [OPTIONS]
      -h                        Display this usage message
@@ -79,13 +80,31 @@ Usage: thingy [OPTIONS]
 text = ('Put several strings within parentheses '
         'to have them joined together.')
 
+# Strings can be indexed (subscripted), with the first character having index 0
 word = 'Python'
+word[0]
 word[0:2]  # characters from position 0 (included) to 2 (excluded)
 # This makes sure that s[:i] + s[i:] is always equal to s:
 word[:2] + word[2:]
+# Slice indices have useful defaults; an omitted first index defaults to zero, 
+# an omitted second index defaults to the size of the string being sliced.
+
+
+# Indices may also be negative numbers, to start counting from the right
+word[-1]  # last character
+# Note that since -0 is the same as 0, negative indices start from -1.
 
 # Python strings cannot be changed — they are immutable. 
 # Therefore, assigning to an indexed position in the string results in an error:
 # word[0] = 'J'
 # If you need a different string, you should create a new one:
 'J' + word[1:]
+
+# The built-in function len() returns the length of a string:
+s = 'supercalifragilisticexpialidocious'
+len(s)
+
+# String Methods
+# https://docs.python.org/3/library/stdtypes.html#string-methods
+
+

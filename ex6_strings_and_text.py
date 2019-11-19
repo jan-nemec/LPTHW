@@ -29,6 +29,17 @@ print(joke_evaluation.format(hilarious))
 w = "This is the left side of..."
 e = "a string with a right side."
 
+# Strings can be concatenated (glued together) with the + operator, 
+# and repeated with *:
+3 * 'un' + 'ium'
+
+# Two or more string literals (i.e. the ones enclosed between quotes) 
+# next to each other are automatically concatenated.
+'Py' 'thon'
+# This feature is particularly useful when you want to break long strings:
+text = ('Put several strings within parentheses '
+        'to have them joined together.')
+
 print(w + e)
 
 # change "What You Should See" snapshot to reflect changes
