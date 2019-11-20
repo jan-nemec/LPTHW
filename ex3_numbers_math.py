@@ -33,6 +33,11 @@ print("Is it greater?", -2 < 5)
 print("Is it greater or equal?", -2 <= 5)
 print("Is it less or equal?", -2 >= 5)
 
+# There is full support for floating point; operators with mixed type operands 
+# convert the integer operand to floating point:
+4 * 3.75 - 1
+# 14.0
+
 # In interactive mode, the last printed expression is assigned to the variable _.
 # This means that when you are using Python as a desk calculator,
 # it is somewhat easier to continue calculations, for example:
@@ -53,3 +58,9 @@ print('4 ** 3 =', 4 ** 3)
 
 5 ** 2 # 5 squared
 # 25
+
+-3**2 
+# will be interpreted as -(3**2) and thus result in -9. 
+# To avoid this and get 9, you can use 
+(-3)**2
+

@@ -4,7 +4,8 @@
 # somewhere. The best way to do this is with lists. 
 
 # Lists are exactly what their name says: a container of things 
-# that are organized in order from first to last.
+# that are organized in order from first to last. Lists cen be written as
+# a list of comma-separated values (items) between square brackets.
 
 the_count = [1, 2, 3, 4, 5]
 fruits = ['apple', 'oranges', 'pears', 'apricots']
@@ -13,6 +14,11 @@ change = [1, 'pennies', 2, 'dimes', 3, 'quarters']
 # Lists also support operations like concatenation:
 squares = [1, 4, 9, 16, 25]
 squares + [36, 49, 64, 81, 100]
+
+# Like strings (and all other bult-in sequence types), lists can be indexed
+# and sliced:
+squares[0]
+squares[-3:] # slicing returns a new list
 
 cubes = [1, 8, 27, 65, 125]
 # Unlike strings, which are immutable, lists are a mutable type, i.e. it is possible to change their content:
@@ -31,10 +37,14 @@ cubes.append(7 ** 3)
 
 letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
 # Assignment to slices is also possible
-letters[2:5] = ['C', 'D', 'E']
-
+letters[2:5] = ['C', 'D', 'E'] # replace some values
+# now remove them
+letters[2:5] = []
 # clear the list by replacing all the elements with an empty list
 letters[:] = []
+
+# A shallow copy of the list:
+squares2 = squares[:]
 
 # The built-in function len() also applies to lists
 len(letters)
@@ -49,6 +59,18 @@ x[0][1]
 # this first kind of for-loop goes throug a list
 for number in the_count:
     print(f"This is count {number}")
+
+# an initial sub-sequence of the Fibonacci series
+# the sum of two elements defines the next
+a, b = 0, 1 # a multiple assignment
+while a < 10:
+    print(a)
+    a, b = b, a+b
+    # the expressions on the right-hand side are all evaluated first before 
+    # any of the assignments take place
+    # The right-hand side expressions are evaluated from the left to the right.
+
+
 
 # same as above
 for fruit in fruits:
