@@ -23,6 +23,6 @@ print(escape_sequence)
 print("I am 6'2\" tall.")
 print('I am 6\'2" tall.')
 
-# If you don’t want characters prefaced by \ to be interpreted as special characters, 
-# you can use raw strings by adding an r before the first quote:
+# If you don’t want characters prefaced by \ to be interpreted as special 
+# characters, you can use raw strings by adding an r before the first quote:
 print(r'C:\some\name')

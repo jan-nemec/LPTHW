@@ -96,3 +96,9 @@ convert_number("hell")
 # 9. Back to scan in lexicon.py and work on it to make this new test code pass.
 # 10. Once you've done that you have you first passing test, and you move on to
 # the next test.  
+
+# What we should get from our little game lexicon scanner:
+# lexicon.scan ("go north")
+# [('verb', 'go')]
+# lexicon.scan ("kill the princess")
+#[('verb', 'kill'), ('stop', 'the'), ('noun', 'princess')]

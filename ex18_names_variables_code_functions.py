@@ -47,21 +47,32 @@ def print_two_again(arg1, arg2):
 
 print(print_two_again.__doc__)  # Get the Documentation Strings
 
+
+def my_function():
+    """Do nothing, but document it.
+
+    No, really, it doesn't do anything.
+    """
+
+print(my_function.__doc__)
+
 # Function Annotations
 # Function annotations are completely optional metadata information about the types used by user-defined functions 
-
-
-# this just takes one argument
-def print_one(arg1):
-    print(f"arg1: {arg1}")
-
+# Annotations are stored in __annotations__ attribute of the function as a dictionary
 
 # this one has an default parameter eggs
 def f(ham: str, eggs: str = 'eggs') -> str:
     print("Annotations:", f.__annotations__)
     print("Arguments:", ham, eggs)
     return ham + ' and ' + eggs
+
+f('spam')
 # Annotations: {'ham': <class 'str'>, 'eggs': <class 'str'>, 'return': <class 'str'>}
+
+
+# this just takes one argument
+def print_one(arg1):
+    print(f"arg1: {arg1}")
 
 # default parameter
 def simple(num1, num2 = 5):

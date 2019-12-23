@@ -72,7 +72,6 @@ print(f"Are the results same?\nResult1: {result1}\nResult2: {result2}")
 # Specify a default value for one or more arguments.
 # This creates a function that can be called with fewer arguments than it is defined to allow.
 
-
 def ask_ok(prompt, retries=4, reminder='Please try again!'):
     while True:
         ok = input(prompt)
@@ -90,14 +89,11 @@ def ask_ok(prompt, retries=4, reminder='Please try again!'):
 # giving one of the optional arguments: ask_ok('OK to overwrite the file?', 2)
 # or even giving all arguments: ask_ok('OK to overwrite the file?', 2, 'Come on, only yes or no!')
 
-
 # The default values are evaluated at the point of function definition in the defining scope, so that
 i = 5
 
-
 def f(arg=i):
     print(arg)
-
 
 i = 6
 f()
@@ -107,11 +103,9 @@ f()
 # Important warning: The default value is evaluated only once.
 # This makes a difference when the default is a mutable object such as a list, dictionary, or instances of most classes.
 
-
 def f(a, L=[]):
     L.append(a)
     return L
-
 
 print(f(1))
 print(f(2))
@@ -124,16 +118,14 @@ print(f(3))
 
 # If you don’t want the default to be shared between subsequent calls, you can write the function like this instead:
 
-
 def f(a, L=None):
     if L is None:
         L = []
     L.append(a)
     return L
 
-# Keyword Arguments
-
-
+# Keyword Arguments 
+# kwarg = value
 def parrot(voltage, state='a stiff', action='voom', type='Norwegian Blue'):
     print("-- This parrot wouldn't", action, end=' ')
     print("if you put", voltage, "volts through it.")
@@ -154,7 +146,6 @@ parrot('a thousand', state='pushing up the daisies')  # 1 positional, 1 keyword
 # This may be combined with a formal parameter of the form *name which receives a tuple containing the positional arguments beyond the formal parameter list. (*name must occur before **name.)
 # For example, if we define a function like this:
 
-
 def cheeseshop(kind, *arguments, **keywords):
     print("-- Do you have any", kind, "?")
     print("-- I'm sorry, we're all out of", kind)
@@ -171,10 +162,44 @@ cheeseshop("Limburger", "It's very runny, sir.",
            client="John Cleese",
            sketch="Cheese Shop Sketch")
 
+# Special parameters
+# / *
+# Consider the following example function definitions paying close attention to the markers / and *:
+def standard_arg(arg):
+    print(arg)
+standard_arg(2)
+standard_arg(arg=2)
+
+def pos_only_arg(arg, /):
+    print(arg)
+# The second function pos_only_arg is restricted to only use positional 
+# parameters as there is a / in the function definition:
+pos_only(1)
+
+def kwd_only_arg(*, arg):
+    print(arg)
+# The third function kwd_only_args only allows keyword arguments as indicated 
+# by a * in the function definition:
+kwd_only_arg(arg=3)
+
+def combined_example(pos_only, /, standard, *, kwd_only):
+    print(pos_only, standard, kwd_only)
+combined_example(1, 2, kwd_only=3)
+combined_example(1, standard=2, kwd_only=3)
+
+# Recap
+# def f(pos1, pos2, /, pos_or_kwd, *, kwd1, kwd2):
+# • Use positional-only if you want the name of the parameters to not be available to the user.
+# • Use keyword-only when names have meaning and the function definition is 
+# more understandable by being explicit with names or you want to prevent 
+# users relying on the position of the argument being passed.
+# • For an API, use positional-only to prevent breaking API changes 
+# if the parameter’s name is modified in the future.
+
+
 # Arbitrary Argument Lists
 # The least frequently used option is to specify that a function can be called with an arbitrary number of arguments.
 # These arguments will be wrapped up in a tuple.
-
 
 def concat(separator, *args):  # def concat(*args, separator="/"):
     return separator.join(args)
@@ -188,7 +213,6 @@ args = [3, 6]
 list(range(*args))  # call with arguments unpacked from a list
 
 # In the same fashion, dictionaries can deliver keyword arguments with the **-operator:
-
 
 def parrot(voltage, state='a stiff', action='voom'):
     print("-- This parrot wouldn't", action, end=' ')

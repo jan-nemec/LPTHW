@@ -65,11 +65,15 @@ print('The value of PI is approximately %5.3f.' % math.pi)
 
 # End of lines are automatically included in the string, 
 # but it’s possible to prevent this by adding a \ at the end of the line.
+print("Python")
 print("""\
 Usage: thingy [OPTIONS]
      -h                        Display this usage message
      -H hostname               Hostname to connect to
 """)
+
+# Strings can be concatenated with the + operator, and repeated with *:
+3 * 'un' + 'im'
 
 # Two or more string literals (i.e. the ones enclosed between quotes) next to each other are automatically concatenated.
 'Py' 'thon'
@@ -79,10 +83,20 @@ Usage: thingy [OPTIONS]
 text = ('Put several strings within parentheses '
         'to have them joined together.')
 
+# if you want to concatenate variables or a variable and a literal, use +:
+prefix = 'Py'
+prefix + 'thon'
+
 word = 'Python'
 word[0:2]  # characters from position 0 (included) to 2 (excluded)
 # This makes sure that s[:i] + s[i:] is always equal to s:
 word[:2] + word[2:]
+
+# +---+---+---+---+---+---+
+# | P | y | t | h | o | n |
+# +---+---+---+---+---+---+
+# 0   1   2   3   4   5   6
+#-6  -5  -4  -3  -2  -1
 
 # Python strings cannot be changed — they are immutable. 
 # Therefore, assigning to an indexed position in the string results in an error:
