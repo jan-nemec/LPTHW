@@ -12,6 +12,10 @@
 # This keeps your programs small, but it also acts as documentation for other programmers who read your
 # code later.
 from sys import argv  # argv holds the arguments you pass to your Python script
+# Argument passing - the script name and additional arguments thereafter are
+# turned into a list of strings and assigned to the arg variable in the sys module.
+# The length of the list is at least one; when no script and no arguments are
+# given, sys.argv[0] is is an empty string.
 
 script, first, second, third = argv  
 # ”unpacks” argv so that, rather than holding all the arguments, 

@@ -1,3 +1,15 @@
+# Source Code Endcoding
+# By default, Python source files are treated as encoded in UTF-8.
+# To declare an encoding other than the default one, a special comment line 
+# should be added as the FIRST line of the file. The syntax is as follows:
+# -*- coding: encoding -*-
+# -*- coding: cp1252 -*-
+# One exception to the first line rule is when the source code starts with 
+# a UNIX “shebang” line. In this case, the encoding declaration should be 
+# added as the second line of the file. For example:
+#!/usr/bin/env python3
+# -*- coding: cp1252 -*-
+
 # Exercise 1: A Good First Program
 """A Good First Program"""
 
