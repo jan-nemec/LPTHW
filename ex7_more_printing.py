@@ -22,3 +22,8 @@ end12 = "r"
 # watch that comma at the end. try removing it to see what happens
 print(end1 + end2 + end3 + end4 + end5 + end6, end=" ")
 print(end7 + end8 + end9 + end10 + end11 + end12)
+
+# If you don’t want characters prefaced by \ to be interpreted as special 
+# characters, you can use raw strings by adding an r before the first quote:
+print('C:\some\name') # here \n means newline
+print(r'C:\some\name') # note the r before the quote

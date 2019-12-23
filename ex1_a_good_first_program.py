@@ -29,3 +29,7 @@ print("I made the study drill.")
 #   difficult passages and things to change the readability.
 # * Try to do what other people are doing in Python until you find your own
 #   style.
+
+# Interpreter
+# Note that a secondary prompt on a line by itself in an example means you must
+# type a blank line; this is used to end a multi-line command.
