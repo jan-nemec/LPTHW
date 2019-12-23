@@ -11,7 +11,9 @@
 # Python adds the two numbers. Then when the function ends,
 # any line that runs it will be able to assign this a + b result to a variable.
 
-# The return statement returns with a value from a function. return without an expression argument returns None.
+# The return statement returns with a value from a function. 
+# return without an expression argument returns None.
+# Falling off the end of a function also returns None.
 
 
 def add(a, b):
@@ -68,10 +70,10 @@ result1 = add(subtract(divide(34, 100), 1023), 24)
 result2 = 24 + 34 / 100 - 1023
 print(f"Are the results same?\nResult1: {result1}\nResult2: {result2}")
 
+
 # Default Argument Values
 # Specify a default value for one or more arguments.
 # This creates a function that can be called with fewer arguments than it is defined to allow.
-
 
 def ask_ok(prompt, retries=4, reminder='Please try again!'):
     while True:
@@ -198,3 +200,27 @@ def parrot(voltage, state='a stiff', action='voom'):
 
 d = {"voltage": "four million", "state": "bleedin' demised", "action": "VOOM"}
 parrot(**d)
+
+
+# the Fibonacci series returns a list of the numberes instead of printing it
+def fib2(n): # return Fibonacci series up to n
+    """Return a list containing the Fibonacci series up to n."""
+    result = []
+    a, b = 0, 1
+    while a < n:
+        result.append(a)
+        # The statement result.append(a) calls a method of the list 
+        # object result. A method is a function that ‘belongs’ to an object 
+        # and is named obj.methodname, where obj is some 
+        # object (this may be an expression), and methodname is the name of 
+        # a method that is defined by the object’s type. 
+        # Different types define different methods. Methods of different 
+        # types may have the same name without causing ambiguity. 
+        # It is possible to define your own object types and methods, using classes.
+
+        #result += [a] # this is equivalent, but less efficient then append
+        a, b = b, a + b
+    return result
+
+f100 = fib2(100) # call it
+f100 # write the result

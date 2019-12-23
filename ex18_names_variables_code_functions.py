@@ -24,10 +24,39 @@
 # 3. Did you put the values you want into the parenthesis separated by commas?
 # 4. Did you end the function call with a ) character?
 
+# The arguments are passed using call by value (where the value is always an
+# object reference, not the value object.) When a function calls another
+# function, a new local symbol table is created for this call.fi
+
+# Coming from other languages, you might object that print_two is not a function
+# but a procedure since it doesn’t return a value.
+# In fact, even functions without a return statement do return a value, albeit a rather boring one.
+# This value is called None (it’s a built-in name).
+# Writing the value None is normally suppressed by the interpreter if it would be the only value written.
+# You can see it if you really want to using print():
+print(print_two("Jan", "Nemec"))
+
+# Fibonacci series
+def fib(n): # write Fibonacci series up to n
+    """Print a Fibonacci series up to n."""
+    a, b = 0, 1
+    while a < n:
+        print(a, end= ' ')
+        a, b = b, a + b
+    print()
+
+# call the function we just defined
+fib(2000) 
+
+# Fuction that doesn't return a value - in fakct, even functions without a
+# return statement do retur a value - this value is called None. Writing the
+# value None is normally suppressed by the interpreter if it would be the only
+# value written.
+print(fib(0))
+
+
 # this one is like your scripts with argv
 # That tells Python to take all the arguments to the function and then put them in args as a list. It's like argv that you've been using, but for functions. It's not normally used too often unless specifically needed.
-
-
 def print_two(*args):  # put args as a list
     arg1, arg2 = args
     print(f"arg1: {arg1}, arg2: {arg2}")
@@ -85,10 +114,5 @@ print_two_again("Jan", "Nemec")
 print_one("First!")
 print_none()
 
-# Coming from other languages, you might object that print_two is not a function
-# but a procedure since it doesn’t return a value.
-# In fact, even functions without a return statement do return a value, albeit a rather boring one.
-# This value is called None (it’s a built-in name).
-# Writing the value None is normally suppressed by the interpreter if it would be the only value written.
-# You can see it if you really want to using print():
-print(print_two("Jan", "Nemec"))
+
+

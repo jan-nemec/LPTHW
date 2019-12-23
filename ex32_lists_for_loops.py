@@ -178,15 +178,22 @@ for w in words[:]:  # Loop over a slice copy of the entire list.
 # output: [0, 1, 2, 3, 4]
 
 # break and continue Statements:
+# else Clauses on Loops
 for n in range(2, 10):
     for x in range(2, n):
         if n % x == 0:
             print(n, 'equals', x, '*', n // x)
             # else clause is not executed when the loop is terminated by a break statement.
             break
-        else:
-            # loop fell through without finding a factor
-            print(n, 'is a prime number')
+    else:
+        # else Clause on Loops - has more in common with else clause of a try
+        # statement
+        # a try statement's else clause runs when no exception occurs
+        # a loop's else clause runs when no break occurs
+        # Yes, this is the correct code. Look closely: the else clause belongs to 
+        # the for loop, not the if statement.
+        # loop fell through without finding a factor
+        print(n, 'is a prime number')
 
 # The continue statement continues with the next iteration of the loop:
 for num in range(2, 10):
@@ -196,18 +203,19 @@ for num in range(2, 10):
     print("Found a number", num)
 
 # pass Statements:
-# The pass statement does nothing. It can be used when a statement is required syntactically but the program requires no action.
+# The pass statement does nothing. It can be used when a statement is required 
+# syntactically but the program requires no action.
 # For example:
 while True:
     pass  # Busy-wait for keyboard interrupt (Ctrl+C)
 
 # This is commonly used for creating minimal classes:
-
-# Another place pass can be used is as a place-holder for a function or conditional body when you are working on new code, allowing you to keep thinking at a more abstract level.
-
-
 class MyEmptyClass:
     pass
+
+# Another place pass can be used is as a place-holder for 
+# a function or conditional body when you are working on new code, 
+# allowing you to keep thinking at a more abstract level.
 
 
 def initlog(*args):
