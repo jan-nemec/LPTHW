@@ -150,3 +150,26 @@ name.lstrip()
 
 name = "     Jean-luc Picard    "
 name.strip()
+
+# Determine if a String Starts or Ends With a Particular String
+starship = "Enterprise"
+starship.startswith("en")
+starship.endswith("rise")
+
+# Find a String in a String
+phrase = "the surprise is in here somewhere"
+phrase.find("surprise")
+# If .find() doesn’t ﬁnd the desired substring, it will return -1 instead.
+# .find() only returns the index of the ﬁrst occurrence of a substring
+
+# .replace() 
+my_story = "I'm telling you the truth; nothing but the truth!"
+my_story.replace("the truth", "lies")
+
+# .replace() can only replace one substring at a time, so if you want to
+# replace multiple substrings in a string you need to use .replace() mul-
+# #tiple times:
+text = "some of the stuff"
+new_text = text.replace("some of", "all")
+new_text = new_text.replace("stuff", "things")
+new_text

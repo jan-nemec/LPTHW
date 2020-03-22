@@ -68,9 +68,6 @@ flavor[-1]
 final_index = len(flavor) - 1
 last_character = flavor[final_index]
 
-
-
-
 # The string is enclosed in double quotes if the string contains a single quote 
 # and no double quotes, otherwise it is enclosed in single quotes. 
 # The print() function produces a more readable output, 

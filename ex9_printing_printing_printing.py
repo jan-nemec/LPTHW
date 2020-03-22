@@ -39,6 +39,10 @@ print(dedent("""
 # str() - converting numbers to strings
 num_pancakes = 10
 "I am going to eat " + str(num_pancakes) + " pacakes."
+# You’re not limited to numbers when using str(). You can pass it all
+# sorts of objects to get their string representations:
+str(print)
+str(float)
 
 s = 'Hello, world.'
 str(s)
