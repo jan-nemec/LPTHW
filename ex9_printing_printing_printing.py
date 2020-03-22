@@ -36,6 +36,10 @@ print(dedent("""
 # fairly human-readable, while repr() is meant to generate representations
 # which can be read by the interpreter 
 
+# str() - converting numbers to strings
+num_pancakes = 10
+"I am going to eat " + str(num_pancakes) + " pacakes."
+
 s = 'Hello, world.'
 str(s)
 # 'Hello, world.'

@@ -2,20 +2,27 @@
 # There are (at least) two distinguishable kinds of errors: 
 # syntax errors 
 #   and 
-# exceptions.
+# exceptions (run-time errors).
 
 # Syntax Errors
 
 # Syntax errors, also known as parsing errors
+# You write some code that isn't allowed in the Python language.
 # The parser repeats the offending line and displays a little ‘arrow’ pointing 
 # at the earliest point in the line where the error was detected. 
 # The error is caused by (or at least detected at) the token preceding the arrow.
 
-# Exceptions
+# Exceptions (run-time errors)
 
 # Even if a statement or expression is syntactically correct, 
 # it may cause an error when an attempt is made to execute it. 
 # Errors detected during execution are called exceptions.
+
+# Run-time errors - they only occur at the time that program is run.
+# While trying to execute the program Python raised an error. Whenever an
+# error occurs, Python stops executing the program and displays the error in
+# IDLE's interactive window. The text that gets displayed for an error is called
+# a traceback.
 
 # ZeroDivisionError: division by zero
 # NameError: name 'spam' is not defined

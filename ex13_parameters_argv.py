@@ -38,3 +38,13 @@ print(f'You are {age} old.')
 # quired to give input. If they give your script inputs on the command line, then you use argv. If
 # you want them to input using the keyboard while the script is running, then use input().
 print(f'In ten years you will be {int(age) + 10} old.')
+
+# Converting Strings to Numbers
+int("12")
+# 12
+float("12")
+# 12.0
+
+num = input("Enter a number to be doubled: ")
+doubled_num = float(num) * 2
+print(doubled_num)

@@ -1,4 +1,5 @@
 # Else and If
+# The keyword ‘elif’ is short for ‘else if’
 # An if … elif … elif … sequence is a substitute for the switch or 
 # case statements found in other languages.
 

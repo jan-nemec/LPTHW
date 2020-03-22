@@ -103,6 +103,11 @@ word[:2] + word[2:]
 # Slice indices have useful defaults; an omitted first index defaults to zero, 
 # an omitted second index defaults to the size of the string being sliced.
 
+# If you omit both the first and second numbers in a slice, it returns the
+# entire string.
+word[:]
+# Python
+
 
 # Indices may also be negative numbers, to start counting from the right
 word[-1]  # last character
@@ -114,7 +119,9 @@ word[-1]  # last character
 # 0   1   2   3   4   5   6
 #-6  -5  -4  -3  -2  -1
 
-# Python strings cannot be changed — they are immutable. 
+# Strings Are Immutable
+
+# Python strings cannot be changed once you've created them — they are immutable. 
 # Therefore, assigning to an indexed position in the string results in an error:
 # word[0] = 'J'
 # If you need a different string, you should create a new one:
@@ -127,4 +134,19 @@ len(s)
 # String Methods
 # https://docs.python.org/3/library/stdtypes.html#string-methods
 
+# Converting String Case
+"Jean-luc Pickard".lower()
+# the dot (.) tells Python that what follows is the name of a method - the
+# lower() method in this case.
 
+"Jean-luc Pickard".upper()
+
+# Removing Whitespace From a String
+name = "Jean-luc Picard      "
+name.rstrip()
+
+name = "         Jean-luc Picard"
+name.lstrip()
+
+name = "     Jean-luc Picard    "
+name.strip()

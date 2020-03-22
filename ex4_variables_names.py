@@ -1,5 +1,14 @@
 # Exercise 4: Variables And Names
 """Variables And Names"""
+# = special symbol called the assignment operator
+# the = operator takes a value to the right of the operator and assigns it
+# to the name on the left of the operator.
+
+# variable namse are case-sensitive
+# descriptive names are better than short names - don't be afraid to use long names.
+# e.g. s = 3600 <- the name is totally ambiguous
+# seconds_per_hour = 3600 <- this name leaves no doubt about that the code means.
+# Python variable naming conventions - snake case like num_students, list_of_names
 
 cars = 100
 space_in_a_car = 4.0
