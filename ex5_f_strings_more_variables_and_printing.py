@@ -178,6 +178,23 @@ f"{name}"
 # Expressions should not include comments using the # symbol. You will get a syntax error.
 # f"Eric is {2 * 39 #Oh my!}." # SyntaxError: f-string expression part cannot include '#'
 
+# Print Numbers in Style
+n = 7.125
+ f"The value of n is {n:.2f}"
+# The colon (:) after the variable n indicates that everything after it is
+# part of the formatting speciﬁcation. 
+# The .2 in .2f rounds the number to two decimal places, and the f tells
+# Python to display n as a рxed-point number.
+
+# You can insert commas to group the integer part of large numbers by
+# the thousands with the , option:
+n = 1234567890
+f"The value of n is {n:,}"
+f"The value of n is {n:,.2f}"
+
+ratio = 0.9
+f"Over {ratio:.1%} of Pythonistas say 'Real Python rocks!'"
+f"Over {ratio:.2%} of Pythonistas say 'Real Python rocks!'"
 
 # "Old-school" String Formatting
 # Before Python 3.6, you had two main ways of embedding Python expressions 

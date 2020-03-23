@@ -112,3 +112,75 @@ type(1e6)  # <class 'float'>
 # 0.00011001100110011001100110011...
 
 # Math Functions and Number Methods
+
+# round() - rounding numbers to some number of decimal places
+# Python 3 rounds numbers according to a strategy called rounding
+# ties to even. A tie is any number whose last digit is 5. 2.5 and 3.1415
+# are ties, but 1.37 is not.
+round(2.5)
+# 2
+round(3.5)
+# 4
+
+# Rounding ties to even is the rounding strategy recommended
+# for floating-point numbers by the IEEE (Institute of Electrical
+# and Electronics Engineers) because it helps limit the impact
+# rounding has on operations involving lots of numbers.
+
+# You can round a number to a given number of decimal places:
+round(3.14159, 3)
+# 3.142
+
+# abs() - getting the absolute value of a number
+abs(5)
+# 5
+abs(-3.0)
+# -3.0
+
+# pow() - raising a number to some power
+# ** operator
+# the pow() function. pow() takes two arguments. The ﬁrst is the base, 
+# that is the number to be raised to a power, and the second argument 
+# is the exponent.
+pow(2 ,3)
+# 8
+
+pow(2, -2)
+
+# What’s the diﬀerence between ** and pow()? The pow() function
+# accepts an optional third argument that computes the ﬁrst number
+# raised to the power of the second number and then takes the modulo
+# with respect to the third number.
+# pow(x, y, z) is equivalent to (x ** y) % z
+pow(2, 3, 2)
+# First, 2 is raised to the power 3 to get 8. Then 8 % 2 is calculated, which
+# is 0 because 2 divides 8 with no remainder
+
+# Check if a Float Is Integral
+num = 2.5
+num.is_integer()
+# False
+
+num = 2.0
+num.is_integer()
+# True
+
+# Complex Numbers
+# A complex number is a number with two dis-tinct components: a real component 
+# and an imaginary component
+# a common method is to indicate the real component with the letter i and 
+# the imaginary component with the letter j. For example, 1i +2j is the complex
+#number with real part 1 and imaginary part 2.
+ n = 1 + 2j
+ n
+ # (1+2j)
+ n.real # property - don't perform any action, just return some information
+ # about the number.
+ # 1.0
+ n.imag
+# 2.0
+n.conjugate() - # method - performs an action on the complex number
+# For any complex number, its conjugate is the complex number with
+# the same real part and an imaginary part that is the same in absolute
+# value but with the opposite sign. 
+# (1-2j)
