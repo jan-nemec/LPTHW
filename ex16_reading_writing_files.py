@@ -7,6 +7,9 @@
 # write('stuff') -- Writes "stuff" to the file.
 # seek(0) -- Move the read/write location to the beginning of the file.
 
+
+# Reading and Writing Opened Files
+
 # .read(size=-1) 
 # This reads from the file based on the number of size bytes. 
 # If no argument is passed or None or -1 is passed, then the entire file is read.
@@ -30,7 +33,13 @@ print("If you do want that, hit RETURN.")
 input("?")
 
 print("Opening the file...")
+# When you want to work with a file, the first thing to do is to open it. 
+# This is done by invoking the open() built-in function. 
+# open() has a single required argument that is the path to the file. 
+# open() has a single return, the file object:
 target = open(filename, 'w')
+
+# Most likely, you’ll also want to use the second positional argument, mode. 
 # target = open(filename, 'w+')
 # If you use 'w' then you're saying "open this file in 'write' mode," thus the 'w' character. There's also 'r' for "read," 'a' for append, and modifiers on these.
 # The most important one to know for now is the + modifier, so you can do 'w+', 'r+', and 'a+'. This will open the file in both read and write mode, and depending on the character use position the file in different ways.
@@ -51,6 +60,8 @@ target = open(filename, 'w')
 # 'r' Open for reading (default)
 # 'rb' or 'wb' Open in binary mode (read/write using byte data)
 
+# Warning: You should always make sure that an open file is properly closed.
+
 # When you’re manipulating a file, there are two ways that you can use to ensure 
 # that a file is closed properly, even when encountering an error. 
 # The first way to close a file is to use the try-finally block:
@@ -69,6 +80,8 @@ finally:
  # as it allows for cleaner code and makes handling any unexpected errors easier for you.
 with open('workfile') as f:
     read_data = f.read()
+
+
 f.closed # return True if file is closed
 
 # If you’re not using the with keyword, 
@@ -159,16 +172,19 @@ f.seek(-3, 2)  # Go to the 3rd byte before the end
 
 target_again.close()
 
+
 # There are three different categories of file objects:
 # Text files
 # Buffered binary files
 # Raw binary files
 
 # Text File Types
-file = open('ex15_sample.txt')
+file = open('ex15_sample.txt', 'r')¨
+# With these types of files, open() will return a TextIOWrapper file object:
 type(file)
 
 # Buffered Binary File Types
+# With these types of files, open() will return either a BufferedReader or BufferedWriter file object:
 file = open('ex15_sample.txt', 'rb')
 type(file)
 file = open('ex15_sample.txt', 'wb')
@@ -178,42 +194,68 @@ type(file)
 # A raw file type is: “generally used as a low-level building-block for binary and text streams.” 
 # It is therefore not typically used.
 file = open('ex15_sample.txt', 'rb', buffering=0)
+# With these types of files, open() will return a FileIO file object:
 type(file)
+
+
+# Examples of how to use .read(), .readline(), .readlines() methods.
+with open('dog_breeds.txt') as reader:
+    print(reader.read())
+
+# How to raead 5 bytes of a line using .readline()
+with open('dog_breeds.txt') as reader:
+    print(reader.readline(5))
+    # Notice that line is greater than the 5 chars and continues
+    # down the line, reading 5 chars each time until the end of the
+    # line and then "wraps" around
+    print(reader.readline(5))
+    print(reader.readline(5))
+
+# how to read the entire file as a list using the Python .readlines() method
+with open('dog_breeds.txt', 'r') as reader:
+    # Note: readlines doesn't trim the line endings
+    dog_breeds = reader.readlines()
+
 
 # Iterating Over Each Line in the File
 
-with open('ex15_sample.txt', 'r') as reader:
+with open('dog_breeds.txt', 'r') as reader:
     # Read and print the entire file line by line
     line = reader.readline()
     while line != '': # The EOF char is an empty string
         print(line, end='')
+        # The end='' is to prevent Python from adding an additional newline 
+        # to the text that is being printed and only print what is being read from the file.
         line = reader.readline()
 
 # Another way you could iterate over each line in the file is to use 
 # the .readlines() of the file object. 
 # Remember, .readlines() returns a list where each element 
 # in the list represents a line in the file:
-with open('ex15_sample.txt', 'r') as reader:
+with open('dog_breeds.txt', 'r') as reader:
     for line in reader.readlines():
         print(line, end='')
 
+# Pythonic
 # However, the above examples can be further simplified by iterating over 
 # the file object itself:
-with open('ex15_sample.txt', 'r') as reader:
+with open('dog_breeds.txt', 'r') as reader:
     # Read and print the entire file line by line
     for line in reader:
         print(line, end='')
 # This final approach is more Pythonic and can be quicker and more memory efficient. 
 
+
 # Writing
 #.write(string) - This writes the string to the file.
-#.writelines(seq) - This writes the sequence to the file. No line endings are appended to each sequence item. It’s up to you to add the appropriate line ending(s).
+#.writelines(seq) - This writes the sequence to the file. 
+    # - No line endings are appended to each sequence item. It’s up to you to add the appropriate line ending(s).
 
-with open('ex15_sample.txt', 'r') as reader:
+with open('dog_breeds.txt', 'r') as reader:
     # Note: readlines doesn't trim the line endings
     dog_breeds = reader.readlines()
 
-with open('ex15_sample_reveresed.txt', 'w') as writer:
+with open('dog_breeds_reveresed.txt', 'w') as writer:
     # Alternatively you can use writer.writelines(reversed(dog_breeds))
 
     # Write to the file in reversed order
@@ -225,7 +267,7 @@ with open('ex15_sample_reveresed.txt', 'w') as writer:
 # This is done by adding the 'b' character to the mode argument. 
 # All of the same methods for the file object apply. 
 # However, each of the methods expect and return a bytes object instead:
-with open('ex15_sample.txt', 'rb') as reader:
+with open('dog_breeds.txt', 'rb') as reader:
     print(reader.readline())
 
 with open('jack_russell.png', 'rb') as byte_reader:
@@ -235,6 +277,22 @@ with open('jack_russell.png', 'rb') as byte_reader:
     print(byte_reader.read(1))
     print(byte_reader.read(1))
 
+
+# Appending to a File
+# Sometimes, you may want to append to a file or start writing at the end 
+# of an already populated file. This is easily done by using the 'a' character
+# for the mode argument:
+with open('dog_breeds.txt', 'a') as a_writer:
+    a_writer.write('\nBeagle')
+
+
+# Working With Two Files at the Same Time
+# You may want to read a file and write to another file at the same time.
+d_path = 'dog_breeds.txt'
+d_r_path = 'dog_breeds_reversed.txt'
+with open(d_path, 'r') as reader, open(d_r_path, 'w') as writer:
+    dog_breeds = reader.readlines()
+    writer.writelines(reversed(dog_breeds))
 
     
 

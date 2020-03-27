@@ -39,3 +39,22 @@ in_file.close()
 # You probably did something like this, indata = open(from_file).read(), which means you don’t need to then
 # do in_file.close() when you reach the end of the script. It should already be closed by Python
 # once that one line runs.
+
+# Line Endings
+
+# The line ending has its roots from back in the Morse Code era, 
+# when a specific pro-sign was used to communicate the end of a transmission or the end of a line.
+# The American Standards Association (ASA) tates that line endings should use 
+# the sequence of the Carriage Return (CR or \r) and the Line Feed (LF or \n) characters (CR+LF or \r\n).
+# The ISO (The International Organization for Standardization) standard however allowed 
+# for either the CR+LF characters or just the LF character.
+
+# Windows uses the CR+LF characters to indicate a new line, 
+# while Unix and the newer Mac versions use just the LF character.
+
+# Character Encodings
+# Another common problem that you may face is the encoding of the byte data.
+# The two most common encodings are the ASCII and UNICODE Formats. 
+# ASCII can only store 128 characters, while Unicode can contain up to 1,114,112 characters.
+
+# ASCII is actually a subset of Unicode (UTF-8), meaning that ASCII and Unicode share the same numerical to character values.

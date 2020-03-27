@@ -5,9 +5,11 @@
 # This tool is broken up into three major sections. 
 # The first is str2unix(), 
 # which converts a string from \\r\\n line endings to \\n. 
+
 # The second is dos2unix(), 
 # which converts a string that contains \r\n characters into \n. 
 # dos2unix() calls str2unix(). 
+
 # Finally, there’s the __main__ block, 
 # which is called only when the file is executed as a script. 
 # Think of it as the main function found in other programming languages.
@@ -24,7 +26,7 @@ def str2unix(input_str: str) -> str:
     r"""\
     Converts the string from \r\n line endings to \n
 
-    Paramters
+    Parameters
     ---------
     input_str
         The string whose line endings will be converted
@@ -71,7 +73,7 @@ def dos2unix(source_file: str, dest_file: str):
         # streamline some things
         parser.add_argument(
             'source_file',
-            help=''
+            help='The location of the source'
         )
 
         parser.add_argument(
