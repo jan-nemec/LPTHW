@@ -1,12 +1,22 @@
-# Exercise 2
-# Print character and specifid index in string
+import math
+import sys
+from os import rename
 
-input_string = input("Enter a string: ")
+import requests
 
-try:
-    index = int(input("Enter an integer: "))
-    print(input_string[index])
-except ValueError:
-    print("Invalid number")
-except IndexError:
-    print("Index is out of bounds")
+print(sys.version)
+print(sys.executable)
+
+# name = input("Your name? ")
+# print("Hello,", name)
+
+
+def greet(who_to_greet):
+    greeting = "Hello, {}".format(who_to_greet)
+    return greeting
+
+
+print(greet("World"))
+print(greet("Copy"))
+r = requests.get("https://coreyms.com")
+print(r.status_code)

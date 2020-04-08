@@ -145,6 +145,10 @@ len(s)
 name = "Jean-luc Picard      "
 name.rstrip()
 
+"123abc".rstrip("bc")
+# The statement string.rstrip('\n') will strip a newline character from the right side of string. 
+'Lorem Ipsum\n'.rstrip('\n')
+
 name = "         Jean-luc Picard"
 name.lstrip()
 
@@ -161,6 +165,11 @@ phrase = "the surprise is in here somewhere"
 phrase.find("surprise")
 # If .find() doesn’t ﬁnd the desired substring, it will return -1 instead.
 # .find() only returns the index of the ﬁrst occurrence of a substring
+
+# The find() method takes two optional, additional parameters: a start index and a stop index:
+phrase = "I'm telling you the truth; nothing but the truth!"
+# If stop is not specified, find() starts at index start, and stops at the end of the string.
+print(phrase.find('e', 10))
 
 # .replace() 
 my_story = "I'm telling you the truth; nothing but the truth!"

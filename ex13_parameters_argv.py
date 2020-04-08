@@ -17,7 +17,7 @@ from sys import argv  # argv holds the arguments you pass to your Python script
 # The length of the list is at least one; when no script and no arguments are
 # given, sys.argv[0] is is an empty string.
 
-script, first, second, third = argv  
+script, first, second, third = argv
 # ”unpacks” argv so that, rather than holding all the arguments, 
 # it gets assigned to four variables you can work with: script, first, second, and third. 
 # Take whatever is in argv, unpack it, and assign it to all of these variables on the left in order.

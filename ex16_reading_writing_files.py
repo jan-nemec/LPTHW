@@ -166,6 +166,18 @@ f = open('ex16_test.txt', 'rb+')
 f.seek(5) # Go to the 6th byte in the file
 f.seek(-3, 2)  # Go to the 3rd byte before the end
 
+with open('ex15_sample.txt', 'r') as f:
+    size_to_read = 10
+
+    f_contents = f.read(size_to_read)
+    print(f_contents, end='')
+
+    f.seek(0)
+
+    f_contents = f.read(size_to_read)
+    print(f_contents)
+
+
 # In text files (those opened without a b in the mode string), 
 # only seeks relative to the beginning of the file are allowed 
 #  and the only valid offset values are those returned from the f.tell(), or zero.
@@ -246,10 +258,38 @@ with open('dog_breeds.txt', 'r') as reader:
 # This final approach is more Pythonic and can be quicker and more memory efficient. 
 
 
+# Storing text data in a list variable
+my_lines = []
+with open('dog_breeds.txt', 'rt') as reader:
+    for line in reader:
+        my_lines.append(line)
+    
+    # A list object is an iterator, so to print every element of the list, we can
+    # iterate over it with for...in:
+    for my_line in my_lines:
+        print(my_line, end='')
+print(my_lines)
+
+# v2 with rstrip()
+my_lines = []
+with open('dog_breeds.txt', 'rt') as reader:
+    for line in reader:
+        my_lines.append(line.rstrip('\n'))
+    
+    # A list object is an iterator, so to print every element of the list, we can
+    # iterate over it with for...in:
+    for my_line in my_lines:
+        print(my_line)
+
 # Writing
 #.write(string) - This writes the string to the file.
 #.writelines(seq) - This writes the sequence to the file. 
     # - No line endings are appended to each sequence item. It’s up to you to add the appropriate line ending(s).
+
+with open('test2.txt', 'w') as f:
+    f.write('Test')
+    f.seek(0)
+    f.write('R')
 
 with open('dog_breeds.txt', 'r') as reader:
     # Note: readlines doesn't trim the line endings
@@ -294,6 +334,92 @@ with open(d_path, 'r') as reader, open(d_r_path, 'w') as writer:
     dog_breeds = reader.readlines()
     writer.writelines(reversed(dog_breeds))
 
-    
 
+with open('ex15_sample.txt', 'r') as rf:
+    with open('test2.txt', 'w') as wf: # These 2 open statements can be written on a single line
+        # Two lines -> better readibility (Corey Schafer)
+        for line in rf:
+            wf.write(line)
+
+
+# Copy a large picture file
+# binary mode - add 'b' -> 'rb'/'wb'
+with open('jack_russell.png', 'rb') as rf:
+    with open('jack_russell_copy.png', 'wb') as wf:
+        for line in rf:
+            wf.write(line)
+
+
+# In specific chunk sizes
+with open('jack_russell.png', 'rb') as rf:
+    with open('jack_russell_copy.png', 'wb') as wf:
+        chunk_size = 4096
+        rf_chunk = rf.read(chunk_size)
+        while len(rf_chunk) > 0:
+            wf.write(rf_chunk)
+            rf_chunk = rf.read(chunk_size)
+
+
+# How to extract specific portions of a text file using Python
+
+# Finding all occurrences of a substring
+# We can iterate over the string, starting from the index of the previous match.
+
+# When an occurrence is found, we call find again, starting from a new location in the string.
+my_lines = []
+with open('ex15_sample.txt') as rf:
+    for line in rf:
+        my_lines.append(line.rstrip('\n'))
+
+# Locate and print all occurences of letter "e"
+index = 0
+prev = 0
+phrase = my_lines[5]
+substr = 'e'
+while index < len(phrase):
+    index = phrase.find(substr, index)
+    if index == -1:
+        break
+    print(" " * (index - prev) + substr, end='')
+    prev = index + len(substr)
+    index += len(substr)
+
+print(str)
+#print('\n' + str)
+
+# Incorporating regular expressions
+import re
+phrase = "Good morning, Doctor."
+pattern = re.compile(r"\bd\w*r\b", re.IGNORECASE)
+if pattern.search(phrase) != None:
+    print("Found it.")
+
+# Printing all lines containing substring
+errors = []
+linenum = 0
+substr = "error".lower()
+with open("logfile.txt", "rt") as rf:
+    for line in rf:
+        linenum += 1
+        if line.lower().find(substr) != -1:
+            errors.append("Line " + str(linenum) + ": " + line.rstrip('\n'))
+for err in errors:
+    print(err)
+
+# Extract all lines containing substring, using regex
+# The program below is similar to the above program, 
+# but using the re regular expressions module. 
+# The errors and line numbers are stored as tuples, e.g., (linenum, line).
+import re
+filename = 'logfile.txt'
+errors = []
+linenum = 0
+pattern = re.compile("error", re.IGNORECASE)
+with open(filename, 'rt') as rf:
+    for line in rf:
+        linenum += 1
+        if pattern.search(line) != None:
+            errors.append((linenum, line.rstrip('\n')))
+for err in errors:
+    print("Line " + str(err[0]) + ": " + err[1])
 

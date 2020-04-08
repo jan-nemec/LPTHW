@@ -9,11 +9,12 @@
 # uses specific structuring to arrange tabular data. 
 # Because it’s a plain text file, it can contain only actual text data—
 # in other words, printable ASCII or Unicode characters.
-# The separator character is called a delimiter
+# The separator character is called a delimiter.
 
 # The Python’s Built-in CSV Library
 
 # Reading CSV Files With csv
+
 import csv
 
 with open('sample.txt') as csv_file:
@@ -30,6 +31,7 @@ with open('sample.txt') as csv_file:
     print(f'Processed {line_count} lines.')
 
 # Reading CSV Files Into a Dictionary With csv
+
 # You can read CSV data directly into a dictionary (technically, an Ordered Dictionary)
 # The first line of the CSV file is assumed to contain the keys to use to build the dictionary. 
 # If you don’t have these in your CSV file, you should specify your own keys 
@@ -38,7 +40,6 @@ import csv
 
 with open('sample.txt', mode='r') as csv_file:
     csv_reader = csv.DictReader(csv_file, delimiter='!')
-    # Each row returned by the reader is a list of String elements containing the data found by removing the delimiters
     line_count = 0
     for row in csv_reader:
         if line_count == 0:
